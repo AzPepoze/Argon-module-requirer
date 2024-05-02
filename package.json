@@ -3,6 +3,7 @@
   "displayName": "Argon module requirer (Roblox)",
   "description": "Auto require module for Argon (Roblox)",
   "version": "0.0.1",
+  "repository": "https://github.com/AzPepoze/Argon-module-requirer",
   "engines": {
     "vscode": "^1.88.0"
   },
