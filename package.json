@@ -2,7 +2,7 @@
   "name": "argon-module-requirer",
   "displayName": "Argon module requirer (Roblox)",
   "description": "Auto require module for Argon (Roblox)",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "repository": "https://github.com/AzPepoze/Argon-module-requirer",
   "publisher": "AzPepoze",
   "icon": "./icon.png",
