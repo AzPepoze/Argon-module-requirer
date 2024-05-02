@@ -9,8 +9,12 @@ function generateLuaRequireStatement(filePath: string): Module | null {
 
      const [, Service, fileName] = match;
      const segments = fileName.split('/').filter(segment => segment !== '');
-     const objectName = segments[segments.length - 1];
-
+     
+     var objectName = segments[segments.length - 1];
+     if (objectName === ".src" || objectName === ".source") {
+          segments.pop();
+     }
+     objectName = segments[segments.length - 1];
 
      var path = `game:GetService("${Service}")`;
      for (let i = 0; i < segments.length; i++) {

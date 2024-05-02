@@ -36,8 +36,12 @@ export async function Check_File_Exists(File: vscode.Uri) {
 }
 
 export async function Check_File_Exists_Workspace(name: string) {
-	const uri = vscode.Uri.joinPath(vscode.workspace.workspaceFolders![0].uri, name);
-	return await Check_File_Exists(uri);
+	const Files = await vscode.workspace.findFiles(`**/${Setting_File_Name}`, "**/src/**");
+	if (Files.length > 0) {
+		return true;
+	} else {
+		return false;
+	}
 }
 
 async function Create_File(name: string, content: string) {
@@ -109,7 +113,7 @@ export async function activate(context: vscode.ExtensionContext) {
 	});
 
 	async function Run() {
-		if (await Check_File_Exists_Workspace(".argon.project.json")) {
+		if (await Check_File_Exists_Workspace("*.project.json")) {
 			await LoadSetting();
 			AllCommands["Load all modules"]();
 		} else {
